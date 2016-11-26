@@ -23,23 +23,20 @@ class App extends Component {
   }
 
   onFieldChange(fieldName, e) {
-    this.setState(Object.assign({}, this.state, { [fieldName]: e.target.value }), this.updateResult.bind(this));
+    this.setState({ [fieldName]: e.target.value }, this.updateResult.bind(this));
   }
 
   onSetResult(e) {
-    this.setState(Object.assign({}, this.state, { result: e.target.value }), this.updateResult.bind(this));
+    this.setState({ result: e.target.value }, this.updateResult.bind(this));
   }
 
   updateResult() {
 
-    this.setState(Object.assign({}, this.state, calc(this.state) ));
+    this.setState(calc(this.state));
 
   }
 
   checkSelected(fieldName) {
-
-    console.log(fieldName === this.state.result);
-
     return fieldName === this.state.result ? 'checked' : '';
   }
 
