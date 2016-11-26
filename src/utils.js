@@ -1,21 +1,25 @@
+function calcResult(a, b, c) {
+    return (a * b) / c;
+}
+
 export function calc({ a, b, x, y, result }) {
 
     switch(result) {
 
       case 'y':
-        y = (b * x) / a
+        y = calcResult(b, x, a);
       break;
 
       case 'x':
-        x = (a * y) / b
+        x = calcResult(a, y, b);
       break;
 
       case 'a':
-        a = (b * x) / y
+        a = calcResult(b, x, y);
       break;
 
       case 'b':
-        b = (a * y) / x
+        b = calcResult(a, y, x);
       break;
 
     }
