@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Input from './components/Input';
 
 import { calc } from './utils.js';
 
-class Input extends Component {
-
-  render() {
-    return (
-      <div>
-        <input type="radio" value="a" onChange={this.onSetResult.bind(this)} />
-        <input type="number" value={this.state.a} onChange={this.onFieldChange.bind(this, 'a')} />
-      </div>
-    )
-  }
-}
-
-
 class App extends Component {
 
-  componentWillMount() {
-
+  constructor() {
+    super();
     this.state = {
       a: 100,
       b: 0,
@@ -28,7 +16,9 @@ class App extends Component {
       y: 3,
       result: 'b'
     }
+  }
 
+  componentWillMount() {
     this.updateResult();
   }
 
@@ -59,25 +49,14 @@ class App extends Component {
         
         <div className="formContainer">
           
-          <div>
-            <input type="radio" name="result" value="a" checked={this.state.result === 'a'} onChange={this.onSetResult.bind(this)} />
-            <input type="number" value={this.state.a} onChange={this.onFieldChange.bind(this, 'a')} />
-          </div>
+          <Input name="a" value={this.state.a} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
 
-          <div>
-            <input type="radio" name="result" value="b" checked={this.state.result === 'b'} onChange={this.onSetResult.bind(this)} />
-            <input type="number" value={this.state.b} onChange={this.onFieldChange.bind(this, 'b')} />
-          </div>
+          <Input name="b" value={this.state.b} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
 
-          <div>
-            <input type="radio" name="result" value="x" checked={this.state.result === 'x'} onChange={this.onSetResult.bind(this)} />
-            <input type="number" value={this.state.x} onChange={this.onFieldChange.bind(this, 'x')} />
-          </div>
+          <Input name="x" value={this.state.x} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
 
-          <div>
-            <input type="radio" name="result" value="y" checked={this.state.result === 'y'} onChange={this.onSetResult.bind(this)} />
-            <input type="number" value={this.state.y} onChange={this.onFieldChange.bind(this, 'y')} />
-          </div>
+          <Input name="y" value={this.state.y} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+          
         </div>
       </div>
     );
