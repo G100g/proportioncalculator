@@ -42,20 +42,37 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <main className="App">
+
+        <header>
+          <h1>Proportion Calculator</h1>
+        </header>
         
         <div className="formContainer">
           
-          <Input name="a" value={this.state.a} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+          <div className="formContainer__inputs">
+            <Input name="a" value={this.state.a} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+            <hr />
+            <Input name="b" value={this.state.b} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+          </div>
 
-          <Input name="b" value={this.state.b} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+          <div className="formContainer__equal">
+            <span>=</span>
+          </div>
 
-          <Input name="x" value={this.state.x} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
-
-          <Input name="y" value={this.state.y} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
-          
+          <div className="formContainer__inputs">
+            <Input name="x" value={this.state.x} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+            <hr />
+            <Input name="y" value={this.state.y} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+          </div>
         </div>
-      </div>
+
+        <footer>
+          <p>made by g100g.net - Contribute - Donate</p>
+        </footer>
+
+
+      </main>
     );
   }
 }
