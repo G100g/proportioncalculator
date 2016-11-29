@@ -15,6 +15,7 @@
 .formContainer {
   display: flex;
   height: 100%;
+  padding: 2em;
   align-items: center;
 }
 
@@ -25,6 +26,7 @@
     .formContainer .formContainer__equal {
       flex-grow: 0;
       padding: 20px;
+      font-size: 10em;
     }
 
     .formContainer__inputs {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Input from './components/Input';
 
@@ -27,7 +26,11 @@ class App extends Component {
   }
 
   onSetResult(e) {
-    this.setState({ result: e.target.value }, this.updateResult.bind(this));
+    this.setResult(e.target.value);
+  }
+
+  setResult(fieldName) {
+    this.setState({ result: fieldName }, this.updateResult.bind(this));
   }
 
   updateResult() {
@@ -51,9 +54,9 @@ class App extends Component {
         <div className="formContainer">
           
           <div className="formContainer__inputs">
-            <Input name="a" value={this.state.a} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+            <Input name="a" value={this.state.a} result={this.state.result} onSelect={this.setResult.bind(this)} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
             <hr />
-            <Input name="b" value={this.state.b} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+            <Input name="b" value={this.state.b} result={this.state.result} onSelect={this.setResult.bind(this)} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
           </div>
 
           <div className="formContainer__equal">
@@ -61,9 +64,9 @@ class App extends Component {
           </div>
 
           <div className="formContainer__inputs">
-            <Input name="x" value={this.state.x} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+            <Input name="x" value={this.state.x} result={this.state.result} onSelect={this.setResult.bind(this)} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
             <hr />
-            <Input name="y" value={this.state.y} result={this.state.result} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
+            <Input name="y" value={this.state.y} result={this.state.result} onSelect={this.setResult.bind(this)} onSetResult={this.onSetResult.bind(this)} onChange={this.onFieldChange.bind(this)} />
           </div>
         </div>
 
