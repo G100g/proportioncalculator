@@ -9,11 +9,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      a: 100,
-      b: 0,
-      x: 4,
-      y: 3,
-      result: 'b'
+      a: 4,
+      b: 3,
+      x: 320,
+      y: 0,
+      result: 'y'
     }
   }
 
