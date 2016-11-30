@@ -8,16 +8,21 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = {
+    
+    const hashValues = this.parseHash();
+    
+    this.state = Object.assign({
       a: 4,
       b: 3,
       x: 320,
       y: 0,
       result: 'y'
-    }
+    }, hashValues);
+
   }
 
   componentWillMount() {
+
     this.updateResult();
   }
 
@@ -35,8 +40,33 @@ class App extends Component {
 
   updateResult() {
 
-    this.setState(calc(this.state));
+    
 
+    this.setState(calc(this.state), this.updateHash.bind(this));
+
+  }
+
+  updateHash() {
+    const { a, b, x, y} = this.state;
+    console.log(this.state);
+    window.location.hash = `${a}:${b}:${x}:${y}`;
+  }
+
+  parseHash() {
+    const keys = ['a', 'b', 'x', 'y'];
+    const hash = window.location.hash;
+    let values;
+    if (hash.indexOf('#') !== -1) {
+    values = hash.replace('#', '').split(':')
+                                                .reduce((result, entry, i) => {
+
+                                                  result[keys[i]] = entry;
+
+                                                  return result;
+                                                }, {});
+    }
+
+    return values;
   }
 
   checkSelected(fieldName) {
