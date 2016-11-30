@@ -71,7 +71,7 @@ class App extends Component {
         </div>
 
         <footer>
-          <p>made by g100g.net - Contribute - Donate</p>
+          <p>made by <a href="http://g100g.net">g100g.net</a> - <a href="https://github.com/G100g/proportioncalculator">Contribute</a></p>
         </footer>
 
 
