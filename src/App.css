@@ -37,6 +37,9 @@
 
 
     @media screen and (max-width: 767px) {
+        .App {
+          min-height: 475px;
+        }
 
       h1 {
         font-size: 2.4em;
@@ -48,14 +51,6 @@
         flex-direction: column;
         padding: 1em;
       }
-
-        .inputNumber {
-          margin: 10px 0;
-        }
-
-        .inputNumber input[type="number"] {
-          font-size: 2em;
-        }
 
         .formContainer .formContainer__equal {
           padding: 5px;
