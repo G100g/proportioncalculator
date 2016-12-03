@@ -40,8 +40,6 @@ class App extends Component {
 
   updateResult() {
 
-    
-
     this.setState(calc(this.state), this.updateHash.bind(this));
 
   }
